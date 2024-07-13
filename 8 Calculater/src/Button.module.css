@@ -1,0 +1,13 @@
+.btn {
+  padding: 10px;
+}
+.buttons {
+  margin: 10px;
+  font-size: 1rem;
+  padding: 10px 16px;
+  background-color: chartreuse;
+  outline: 0;
+  border: 0;
+  font-weight: 800;
+  box-shadow: 2px 4px 8px red;
+}

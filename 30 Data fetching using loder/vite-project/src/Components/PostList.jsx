@@ -1,0 +1,50 @@
+import React, { useContext, useEffect, useState } from "react";
+import Post from "./Post";
+import { PostList as PostListData } from "../store/post-list-stor";
+import Welmsg from "./Welmsg";
+import Lodindig from "./Lodindig";
+
+function PostList() {
+  const { postList, addinitialPost } = useContext(PostListData);
+  const [fetching, setFetching] = useState(false);
+
+  // 1 using useState
+  // const [Datafetch, setDataFetch] = useState(false);
+  // if (!Datafetch) {
+  //   fetch("https://dummyjson.com/posts")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       addinitialPost(data.posts);
+  //     });
+  //   setDataFetch(true);
+  // }
+
+  //2nd using useEffect
+  useEffect(() => {
+    setFetching(true);
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        addinitialPost(data.posts);
+        setFetching(false);
+      });
+  }, []);
+
+  return (
+    <div>
+      {fetching && <Lodindig />}
+      {!fetching && postList.length === 0 && <Welmsg />}
+      {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
+    </div>
+  );
+}
+
+export const PostLoder=()=>{
+ return fetch("https://dummyjson.com/posts")
+  .then((res) => res.json())
+  .then((data) => {
+    return data.posts;
+  });
+}
+
+export default PostList;

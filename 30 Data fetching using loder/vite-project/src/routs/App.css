@@ -1,0 +1,41 @@
+.app-container {
+  display: flex;
+}
+.contain {
+  width: 100%;
+}
+
+.footer-bottom {
+  margin-top: auto;
+}
+.post-card {
+  margin: 20px 40px;
+}
+.htag {
+  margin: 0 5px;
+}
+
+.reaction{
+    margin:15px 0;
+    width: 100%;
+}
+.createpost{
+  width: 80%;
+  margin:60px 10% 0 10% ;
+}
+.welcome{
+  font-size: 30px;
+  margin-top: 20%;
+  margin-bottom:5%;
+ margin-left: 20%;
+}
+.button{
+  margin-left: 25%;
+  
+}
+.clear{
+margin-left: 20px;
+}
+.spiner{
+  margin: 10%;
+}
